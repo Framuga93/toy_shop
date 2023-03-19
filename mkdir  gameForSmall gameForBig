@@ -1,0 +1,12 @@
+mkdir  gameForSmall gameForBig
+cd gameForBig 
+touch Robo Constr TableGame
+cd gameForSmall
+touch toys dolls cars
+mkdir NAMETOY
+mv gameForSmall NAMETOY
+mv gameForBig NAMETOY
+mv NAMETOY toys
+nano doit.txt
+crontab -e
+*/3  * * * * cat /home/student/backup.txt > /home/student/backup.txt.bak
