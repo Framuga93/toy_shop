@@ -3,41 +3,45 @@ package org.example.model;
 import java.util.concurrent.atomic.AtomicLong;
 
 public class Toy {
-    private static final AtomicLong atomLong = new AtomicLong(0);
-    private Long id;
-    private String description;
-    private int quantity;
+    private int id;
+    private String name;
+    private int count;
     private int chance;
 
-    public Toy(String description, int quantity, int chance) {
-        this.id = atomLong.getAndIncrement();
-        this.description = description;
-        this.quantity = quantity;
+    public Toy(String name, int chance) {
+        this.name = name;
         this.chance = chance;
     }
 
-    public Long getId() {
+    public Toy(int id,String name, int count, int chance) {
+        this.id = id;
+        this.name = name;
+        this.count = count;
+        this.chance = chance;
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public String getDescription() {
-        return description;
+    public String getName() {
+        return name;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public int getCount() {
+        return count;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setCount(int count) {
+        this.count = count;
     }
 
     public int getChance() {
@@ -52,6 +56,6 @@ public class Toy {
 
     @Override
     public String toString() {
-        return String.format("%d,%s,%d,%d", id, description, quantity, chance);
+        return String.format("%d,%s,%d,%d", id, name, count, chance);
     }
 }
